@@ -13,35 +13,36 @@ vuelta = 1
 if len(diccionario) > 0: # Se carga la pila en cada posicion con nombre:cantidad de peliculas
     for i in range(len(diccionario)): 
         dato = diccionario.popitem() # Para quitar el elemento de un diccionario se usa popitem() y no pop ()
-        pila.push(dato) 
+        pila.push(dato) # se pone el dato en la pila
 
 # dato guarda en cada posicion de la pila una tupa del tipo (nomre : cantidad de peliculas)
-# para acceder a nombre se usa dato[0] y para acceder a cantida de peliculas se usa dato [1]
+# para acceder a nombre se usa dato[0] y para acceder a cantidad de peliculas se usa dato [1]
 # las tuplas son como las listas, se puede acceder a cada elemento a traves de su posicion (desde cero)
 
 for i in range(pila.size()):
     
     dato = pila.pop() # Pila 1 se vacia 
     if dato[0] == 'Rocket Raccoon':
-        print("Rocket Raccoon esta en la posicion: ", vuelta)
+        print("Rocket Raccoon esta en la posicion: ", vuelta) # recordar que vuelta ya vale 1, en la linea 12
     elif dato[0] == 'Groot':
         print("Groot esta en la posicion: ", vuelta)
     vuelta = vuelta + 1
-    pila2.push(dato)
+    pila2.push(dato) # Se guarda el dato en pila 2 para no perderlo 
 print("")
+# Ahora esta cargada pila 2 con los datos 
 for i in range(pila2.size()):
     dato = pila2.pop() # Pila 2 se vacia 
     if dato [1] >='5': # compara 5 como un string porque en el diccionario las values son strings
-        print("El siguiente personaje participo en mas de 5 peliculas: ", dato[0])
-        print("Participo en esta cantidad de peliculas: ", dato[1])
-    pila.push(dato)
+        print("El siguiente personaje participo en mas de 5 peliculas: ", dato[0]) # dato[0] es el nombre 
+        print("Participo en esta cantidad de peliculas: ", dato[1]) # dato[1] es la cantidad de peliculas
+    pila.push(dato) # Se vuelve a llenar la pila 1 para no perder los datos
 print("")
 for i in range(pila.size()):
     dato = pila.pop() # pila 1 queda vacia
     if dato[0] == "Viuda negra":
-        cant_pelis = dato[1]
+        cant_pelis = dato[1] # cant_pelis toma la cantidad de peliculas 
         print("Viuda negra participo en esta cantidad de peliculas: ", cant_pelis)
-    pila2.push(dato)
+    pila2.push(dato) # Se va llenando pila2 para no perder los datos
 print("")
 for i in range(pila2.size()):
     dato = pila2.pop() # Vacia la pila 2 
